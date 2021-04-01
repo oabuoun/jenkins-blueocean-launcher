@@ -10,16 +10,8 @@ services:
     environment:
       DOCKER_TLS_CERTDIR: '/certs'
     volumes:
-      - type: volume
-        source: jenkins-docker-certs
-        target: /certs/client
-        volume:
-          nocopy: true
-      - type: volume
-        source: jenkins-data
-        target: /var/jenkins_home
-        volume:
-          nocopy: true
+      - jenkins-docker-certs:/certs/client:rw
+      - jenkins-data:/var/jenkins_home:rw
 
     networks:
       jenkins:
@@ -41,16 +33,8 @@ services:
       DOCKER_TLS_VERIFY: 1
 
     volumes:
-      - type: volume
-        source: jenkins-docker-certs
-        target: /certs/client
-        volume:
-          nocopy: true
-      - type: volume
-        source: jenkins-data
-        target: /var/jenkins_home:rw
-        volume:
-          nocopy: true
+      - jenkins-data:/var/jenkins_home:rw
+      - jenkins-docker-certs:/certs/client:ro
       - type: bind
         source: "$HOME"
         target: /home
