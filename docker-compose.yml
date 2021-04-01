@@ -30,7 +30,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    user: root
     ports:
       - 8080:8080
       - 50000:50000
@@ -49,7 +48,7 @@ services:
           nocopy: true
       - type: volume
         source: jenkins-data
-        target: /var/jenkins_home
+        target: /var/jenkins_home:rw
         volume:
           nocopy: true
       - type: bind
