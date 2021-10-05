@@ -19,9 +19,7 @@ services:
           - docker
 
   jenkins-blueocean:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: oabuoun/jenkins-blueocean:latest
     ports:
       - 8080:8080
       - 50000:50000
@@ -29,7 +27,7 @@ services:
 
     environment:
       DOCKER_HOST: 'tcp://docker:2376'
-      DOCKER_CERT_PATH: '/certs/client'    
+      DOCKER_CERT_PATH: '/certs/client'
       DOCKER_TLS_VERIFY: 1
 
     volumes:
