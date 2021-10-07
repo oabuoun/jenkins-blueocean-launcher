@@ -17,12 +17,16 @@
 2.  Run the following command in the cloned folder
   ```bash
   cd jenkins
+  ```
+
+3.  Run the docker-compose
+  ```bash
   docker-compose up -d
   ```
 
-3.  Browse to http://localhost:8080 and wait until the Unlock Jenkins page appears.
+4.  Browse to http://localhost:8080 and wait until the Unlock Jenkins page appears.
 
-4.	Display the Jenkins console log with the command:
+5.	Display the Jenkins console log with the command:
 
   ```bash
   docker logs jenkins-blueocean
@@ -34,17 +38,17 @@
 
 	This will show the automatically-generated password.
 
-5.	Copy the password from the last step and paste it into the `Administrator password` on the `Unlock Jenkins` page.
+6.	Copy the password from the last step and paste it into the `Administrator password` on the `Unlock Jenkins` page.
 
-6.	After unlocking Jenkins, the Customize Jenkins page appears. On this page, click Install suggested plugins.
+7.	After unlocking Jenkins, the Customize Jenkins page appears. On this page, click Install suggested plugins.
 
   	The setup wizard shows the progression of Jenkins being configured and the suggested plugins being installed. This process may take a few minutes.
 
-7.	Finally, Jenkins asks you to create your first administrator user.
+8.	Finally, Jenkins asks you to create your first administrator user.
 
-8.	When the Create First Admin User page appears, specify your details in the respective fields and click Save and Finish.
+9.	When the Create First Admin User page appears, specify your details in the respective fields and click Save and Finish.
 
-9.	When the Jenkins is ready page appears, click Start using Jenkins.
+10.	When the Jenkins is ready page appears, click Start using Jenkins.
 
   ***Notes***
 
@@ -52,7 +56,7 @@
 
   	If the page doesn't automatically refresh after a minute, use your web browser to refresh the page manually.
 
-10.	If required, log in to Jenkins with the credentials of the user you just created and you’re ready to start using Jenkins!
+11.	If required, log in to Jenkins with the credentials of the user you just created and you’re ready to start using Jenkins!
 
 ##  Stopping Jenkins
 When you need to stop Jenkins, run the following command (don't do it stop it right now):
@@ -69,7 +73,7 @@ When you need to stop Jenkins, run the following command (don't do it stop it ri
   docker volume rm jenkins_jenkins-docker-certs
   ```
 
-  Then start the setup from Step No. 2
+  Then start the setup from Step No. 3
 
 ## Resources
 1.  https://www.jenkins.io/doc/book/installing/docker/
