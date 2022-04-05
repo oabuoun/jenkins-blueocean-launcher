@@ -12,6 +12,7 @@ services:
     volumes:
       - jenkins-docker-certs:/certs/client:rw
       - jenkins-data:/var/jenkins_home:rw
+    restart: always
 
     networks:
       jenkins:
@@ -24,6 +25,7 @@ services:
       - 8080:8080
       - 50000:50000
     container_name: jenkins-blueocean
+    restart: always
 
     environment:
       DOCKER_HOST: 'tcp://docker:2376'
